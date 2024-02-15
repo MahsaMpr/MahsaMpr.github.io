@@ -1,0 +1,20 @@
+@mixin parentWidth($marginLeftRight: auto, $marginTB: 0) {
+  max-width: 1440px;
+  margin-left: $marginLeftRight;
+  margin-right: $marginLeftRight;
+  margin-top: $marginTB;
+  margin-bottom: $marginTB;
+  padding: 0 $spacer * 3;
+}
+
+@mixin flex($alignItems: center, $justify: center) {
+  display: flex;
+  align-items: $alignItems;
+  justify-content: $justify;
+}
+
+@mixin buttonHover($color: #637e76, $bgColor: white) {
+  background-color: $color;
+  color: $bgColor;
+  cursor: pointer;
+}

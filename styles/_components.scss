@@ -1,0 +1,437 @@
+.main-container {
+  @include parentWidth($marginLeftRight: auto, $marginTB: 0);
+  background: linear-gradient(to bottom, rgb(255, 255, 255), #c0dbc0ee);
+  min-height: 300vh;
+  position: relative;
+  z-index: -99;
+}
+.header {
+  @include flex;
+  flex-direction: row;
+  background-color: $second_bg;
+  height: 80px;
+  width: 70vw;
+  margin: 30px auto;
+  padding: 12px;
+  position: sticky;
+  border: 1px solid #b05e0dcd;
+  box-shadow: 1px 1px 20px 2px #b05e0d75;
+  border-radius: 50px;
+
+  .list-container {
+    @include flex;
+    gap: 100px;
+    font-size: 24px;
+    letter-spacing: 2px;
+  }
+
+  .on_scroll {
+    @include flex;
+    flex-direction: row;
+    background-color: #c5894cad;
+    color: black;
+    height: 80px;
+    width: 100vw;
+    margin: 30px auto;
+    padding: 12px;
+    position: sticky;
+    border-bottom: 1px solid #b05e0dcd;
+    box-shadow: 1px 1px 20px 2px #b05e0d75;
+  }
+}
+.pg-one {
+  @include parentWidth($marginLeftRight: -24px, $marginTB: 0);
+  min-height: 65vh;
+  background-color: $second_bg;
+  border-radius: 0 0 60px 60px;
+
+  .text-container {
+    @include flex($alignItems: center, $justify: center);
+    color: #748e63;
+    font-size: 16px;
+    letter-spacing: 5px;
+    line-height: 30px;
+    @media screen and (max-width: 1024px) {
+      flex-direction: column;
+      > * {
+        width: 100%;
+      }
+    }
+    .text_one {
+      width: 30%;
+      padding: 50px 0 0 50px;
+    }
+    .name {
+      font-size: 28px;
+      color: $second_text;
+    }
+
+    .about {
+      font-size: 18px;
+      color: $second_text;
+    }
+
+    .button-pg1 {
+      @include flex($alignItems: center, $justify: center);
+      width: 190px;
+      height: 40px;
+      padding: 5px;
+      border: 2px solid $second_text;
+      border-radius: 50px;
+      font-size: 12px;
+      color: $second_text;
+      margin: 20px 0;
+
+      .button-pg1 :hover {
+        @include buttonHover($color: $second_text, $bgColor: white);
+      }
+    }
+  }
+
+  img {
+    width: 100%;
+    object-fit: contain;
+  }
+
+  .icon-container {
+    @include flex($alignItems: center, $justify: flex-start);
+    gap: 10px;
+    font-size: 24px;
+
+    > div {
+      text-align: center;
+      padding: 3px 0 3px 4px;
+      color: $second_text;
+      width: 40px;
+      height: 40px;
+      border: 2px solid $second_text;
+      border-radius: 50%;
+    }
+  }
+
+  .page1_box {
+    border: 0.5px solid #b05e0dcd;
+    border-radius: 50px;
+    width: 50%;
+    padding: 20px 40px;
+    margin: 50px auto 0 auto;
+    @include flex($alignItems: center, $justify: center);
+    gap: 50px;
+    text-align: center;
+
+    article:not(:first-child) {
+      border-left: 0.5px solid #b05e0dcd;
+    }
+    > * {
+      font-size: 20px;
+      padding-left: 20px;
+      color: #748e63;
+      font-weight: 700;
+    }
+  }
+}
+
+.page_two {
+  @include parentWidth($marginLeftRight: -24px, $marginTB: 0);
+  background-color: $second_bg;
+  margin-top: 30px;
+  padding-top: 50px;
+  min-height: 80vh;
+  border-radius: 50px;
+  position: relative;
+  z-index: -1;
+
+  @media screen and (max-width: 1024px) {
+    flex-direction: column;
+    flex-wrap: wrap;
+    > * {
+      width: 100%;
+    }
+  }
+
+  .Services > p {
+    font-size: 200px;
+    color: #637e7623;
+    text-align: center;
+    padding-top: 100px;
+    letter-spacing: 10px;
+  }
+
+  .page2_container {
+    @include flex($alignItems: center, $justify: flex-start);
+    gap: 250px;
+
+    @media screen and (max-width: 1024px) {
+      justify-content: center;
+      flex-direction: column;
+      flex-wrap: wrap;
+    }
+
+    .img2 {
+      width: 40%;
+      object-fit: cover;
+      margin-left: 40px;
+      margin-top: 25px;
+    }
+
+    .page2-text {
+      @include flex($alignItems: flex-start, $justify: center);
+      flex-direction: column;
+      width: 100%;
+      font-size: 18px;
+      color: $main_text;
+
+      > h2 {
+        font-size: 64px;
+        color: $main_text;
+        margin-left: -30px;
+        opacity: 0.5;
+      }
+      > p {
+        font-size: 18px;
+        color: #b05e0db9;
+        margin-top: -2px;
+      }
+
+      .list2-container {
+        margin: 50px 0 30px 0;
+        line-height: 40px;
+      }
+
+      .projects {
+        letter-spacing: 4px;
+        color: #b05e0dd6;
+        padding-bottom: 20px;
+      }
+      .button-pg2 {
+        @include flex($alignItems: center, $justify: center);
+        width: 190px;
+        height: 40px;
+        padding: 5px;
+        border: 2px solid $main_text;
+        border-radius: 50px;
+        font-size: 12px;
+        color: $main_text;
+      }
+
+      .button-pg2:hover {
+        @include buttonHover;
+      }
+    }
+  }
+}
+
+.page_three {
+  @include parentWidth($marginLeftRight: -24px, $marginTB: 0);
+  background-color: $second_bg;
+  margin-top: 30px;
+  min-height: 90vh;
+  border-radius: 50px;
+  margin-top: 40px;
+  position: relative;
+  z-index: -1;
+
+  .page3_boxes {
+    @include flex($alignItems: center, $justify: center);
+    gap: 10px;
+    margin-top: -120px;
+    position: absolute;
+    z-index: 1;
+    padding: 0 200px;
+
+    > * {
+      @include flex($alignItems: center, $justify: center);
+      flex-direction: column;
+      gap: 40px;
+      flex-wrap: wrap;
+      text-align: center;
+      background-color: #e5f1e5fd;
+      width: 100%;
+      height: 300px;
+      padding: 70px;
+      border: 0.5px solid #637e7653;
+      border-radius: 50px;
+      box-shadow: 0.1px 0.1px 1px #637e7680;
+      > span {
+        color: $main_text;
+
+        > i {
+          font-size: 64px;
+        }
+      }
+      > h3 {
+        color: $second_text;
+        font-size: 18px;
+      }
+    }
+
+    .box_container > p {
+      font-size: 14px;
+    }
+  }
+
+  .page3_section2 {
+    @include flex($alignItems: center, $justify: center);
+    flex-direction: column;
+    padding-top: 250px;
+
+    .page3_text {
+      @include flex($alignItems: center, $justify: center);
+      flex-direction: column;
+      font-size: 18px;
+      padding-bottom: 30px;
+
+      > h3 {
+        font-size: 72px;
+        color: #637e76bc;
+        padding: 50px 0 30px;
+      }
+
+      p {
+        color: #637e76;
+        letter-spacing: 2px;
+      }
+    }
+    .analyze {
+      width: 100%;
+      @include flex($alignItems: center, $justify: center);
+      gap: 40px;
+      flex-direction: row;
+      flex-wrap: wrap;
+      > * {
+        width: 40%;
+      }
+
+      div {
+        @include flex($alignItems: center, $justify: space-between);
+        gap: 400px;
+        font-size: 24px;
+        color: $second_text;
+      }
+      @media screen and (max-width: 1024px) {
+        justify-content: center;
+        flex-direction: column;
+      }
+    }
+  }
+}
+
+.page_four {
+  @include parentWidth($marginLeftRight: -24px, $marginTB: 0);
+  @include flex($alignItems: center, $justify: flex-start);
+  flex-direction: column;
+  background-color: $second_bg;
+  margin-top: 30px;
+  padding-top: 50px;
+  min-height: 90vh;
+  border-radius: 50px;
+
+  > h4 {
+    font-size: 64px;
+    color: #b05e0d8c;
+    padding: 40px 0 20px 0;
+  }
+  > p {
+    color: #637e76;
+    font-size: 18px;
+    font-weight: 500;
+    text-align: center;
+    margin-bottom: 50px;
+  }
+
+  > article {
+    @include flex($alignItems: center, $justify: center);
+    flex-direction: column;
+    border: 0.5px solid #637e76;
+    border-radius: 10px;
+    width: 30%;
+    min-height: 150px;
+    padding: 20px;
+
+    > span > img {
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+
+    > h3 {
+      font-size: 24px;
+      color: $second_text;
+      padding: 20px 0 20px 0;
+    }
+    > p {
+      color: #637e76;
+      font-size: 14px;
+      font-weight: 500;
+      text-align: center;
+      margin-bottom: 50px;
+    }
+  }
+
+  .icon_buttons {
+    margin-top: 20px;
+    > button {
+      background-color: rgba(255, 255, 255, 0);
+      border-color: rgba(255, 255, 255, 0);
+      font-size: 32px;
+      color: #637e76;
+    }
+    > button:first-child {
+      padding-right: 20px;
+    }
+  }
+}
+
+.page_five {
+  @include parentWidth($marginLeftRight: -24px, $marginTB: 0);
+  background-color: rgb(205, 227, 204);
+  min-height: 60vh;
+  > P {
+    text-align: center;
+    padding-top: 70px;
+    font-size: 100px;
+    font-weight: 700;
+    letter-spacing: 10px;
+    color: rgba(255, 255, 255, 0.55);
+    margin-bottom: 60px;
+  }
+
+  .contact-container > span {
+    @include flex($alignItems: center, $justify: center);
+    width: 150px;
+    padding: 20px;
+    border: 1px solid $main_text;
+    border-radius: 30%;
+
+    > i {
+      font-size: 72px;
+      color: $main_text;
+    }
+  }
+  footer {
+    @include flex($alignItems: center, $justify: center);
+    gap: 50px;
+
+    @media screen and (max-width: 1024px) {
+      justify-content: center;
+      flex-direction: column;
+    }
+
+    .contact-container {
+      @include flex($alignItems: center, $justify: center);
+      flex-direction: column;
+
+      > h3 {
+        font-size: 14px;
+        margin-top: 20px;
+        color: $second_text;
+      }
+
+      > p {
+        font-size: 12px;
+        color: $second_text;
+      }
+    }
+  }
+}
